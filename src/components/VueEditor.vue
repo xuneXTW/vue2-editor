@@ -161,7 +161,9 @@
       },
 
       handleInitialContent() {
-        if (!this.value) this.value = this.quill.root.innerHTML; // Set initial editor content to model
+        let editorContent =
+          this.quill.getHTML() === "<p><br></p>" ? "" : this.quill.getHTML();
+        this.$emit("input", editorContent); // Set initial editor content to model
       },
 
       handleSelectionChange(range, oldRange) {
