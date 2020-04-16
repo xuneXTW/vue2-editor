@@ -67,6 +67,7 @@ export default {
 
   watch: {
     value(val) {
+      console.log('value change');
       if (val != this.quill.root.innerHTML && !this.quill.hasFocus()) {
         this.quill.root.innerHTML = val;
       }
