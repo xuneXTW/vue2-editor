@@ -1,7 +1,9 @@
 <template>
   <div class="quillWrapper">
     <slot name="toolbar"></slot>
-    <div :id="id" ref="quillContainer"></div>
+    <div :id="id" ref="quillContainer">
+      <slot></slot>
+    </div>
     <input
       v-if="useCustomImageHandler"
       id="file-upload"
@@ -89,7 +91,7 @@ export default {
     initializeEditor() {
       this.setupQuillEditor();
       this.checkForCustomImageHandler();
-      this.handleInitialContent();
+      //this.handleInitialContent();
       this.registerEditorEventListeners();
       this.$emit("ready", this.quill);
     },
