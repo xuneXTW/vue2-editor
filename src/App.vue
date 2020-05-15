@@ -10,7 +10,9 @@
       @blur="onEditorBlur"
       @imageAdded="handleImageAdded"
       @image-removed="handleImageRemoved"
-    />
+    >
+      <p>test</p>
+    </VueEditor>
   </div>
 </template>
 
